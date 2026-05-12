@@ -12,15 +12,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'Servidor Netflix Backend activo',
-    api: '/api'
-  });
-});
-
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.get('/frontend', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
