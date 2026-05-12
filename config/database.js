@@ -2,7 +2,7 @@
 
 const conectarMongoDB = async () => {
   try {
-    const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/NetflixBackend';
+    const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/Netflix_backend';
 
     await mongoose.connect(mongoUri);
 

@@ -1,0 +1,37 @@
+<svg width="760" height="360" viewBox="0 0 760 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Panel abstracto de streaming</title>
+  <desc id="desc">Composicion visual oscura con tarjetas de contenido y acentos rojos.</desc>
+  <rect width="760" height="360" rx="28" fill="#111217"/>
+  <rect x="28" y="28" width="704" height="304" rx="24" fill="#181A22"/>
+  <path d="M50 242C137 178 229 208 308 156C392 100 464 88 549 121C616 147 674 132 716 91" stroke="#E50914" stroke-width="12" stroke-linecap="round" opacity=".95"/>
+  <path d="M50 274C142 224 231 252 329 202C421 155 500 154 576 179C637 199 678 185 716 153" stroke="#F5F5F1" stroke-width="4" stroke-linecap="round" opacity=".42"/>
+  <g opacity=".95">
+    <rect x="70" y="67" width="112" height="144" rx="14" fill="#252832"/>
+    <rect x="202" y="52" width="112" height="144" rx="14" fill="#2D303B"/>
+    <rect x="334" y="77" width="112" height="144" rx="14" fill="#252832"/>
+    <rect x="466" y="59" width="112" height="144" rx="14" fill="#2D303B"/>
+    <rect x="598" y="81" width="92" height="120" rx="14" fill="#252832"/>
+  </g>
+  <g opacity=".7">
+    <rect x="88" y="89" width="76" height="8" rx="4" fill="#F5F5F1"/>
+    <rect x="88" y="109" width="52" height="8" rx="4" fill="#747987"/>
+    <rect x="220" y="74" width="76" height="8" rx="4" fill="#F5F5F1"/>
+    <rect x="220" y="94" width="56" height="8" rx="4" fill="#747987"/>
+    <rect x="352" y="99" width="76" height="8" rx="4" fill="#F5F5F1"/>
+    <rect x="352" y="119" width="48" height="8" rx="4" fill="#747987"/>
+    <rect x="484" y="81" width="76" height="8" rx="4" fill="#F5F5F1"/>
+    <rect x="484" y="101" width="42" height="8" rx="4" fill="#747987"/>
+    <rect x="616" y="103" width="56" height="8" rx="4" fill="#F5F5F1"/>
+    <rect x="616" y="123" width="38" height="8" rx="4" fill="#747987"/>
+  </g>
+  <circle cx="104" cy="174" r="20" fill="#E50914"/>
+  <circle cx="236" cy="159" r="20" fill="#E50914"/>
+  <circle cx="368" cy="184" r="20" fill="#E50914"/>
+  <circle cx="500" cy="166" r="20" fill="#E50914"/>
+  <circle cx="632" cy="174" r="16" fill="#E50914"/>
+  <path d="M99 164L116 174L99 184V164Z" fill="#F5F5F1"/>
+  <path d="M231 149L248 159L231 169V149Z" fill="#F5F5F1"/>
+  <path d="M363 174L380 184L363 194V174Z" fill="#F5F5F1"/>
+  <path d="M495 156L512 166L495 176V156Z" fill="#F5F5F1"/>
+  <path d="M628 166L641 174L628 182V166Z" fill="#F5F5F1"/>
+</svg>

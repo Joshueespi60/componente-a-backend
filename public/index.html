@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Backend | Panel CRUD</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="topbar">
+        <a class="brand-mark" href="/frontend" aria-label="Panel Netflix Backend">
+          <span class="brand-symbol" aria-hidden="true"></span>
+          <span>Netflix Backend</span>
+        </a>
+        <button class="btn btn-outline-light btn-sm" id="reloadHeaderBtn" type="button">
+          Recargar datos
+        </button>
+      </nav>
+
+      <section class="intro-layout" aria-labelledby="pageTitle">
+        <div class="intro-copy">
+          <p class="eyebrow">Panel RESTful</p>
+          <h1 id="pageTitle">Catálogo operativo de registros Netflix</h1>
+          <p class="intro-text">
+            Administración conectada a MongoDB para empresas, sedes, estado e indicadores clave.
+          </p>
+        </div>
+        <div class="intro-visual" aria-hidden="true">
+          <img src="assets/stream-grid.svg" alt="" />
+        </div>
+      </section>
+    </header>
+
+    <main class="page-shell">
+      <section class="stats-grid" aria-label="Resumen de registros">
+        <article class="stat-card">
+          <span>Total</span>
+          <strong id="statTotal">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Activas</span>
+          <strong id="statActivas">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Países</span>
+          <strong id="statPaises">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Empleados</span>
+          <strong id="statEmpleados">0</strong>
+        </article>
+      </section>
+
+      <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+      <section class="workspace-grid">
+        <section class="panel form-panel" id="formPanel" aria-labelledby="formTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Registro</p>
+              <h2 id="formTitle">Nuevo registro</h2>
+            </div>
+            <button class="btn btn-light btn-sm" id="clearBtn" type="button">Limpiar</button>
+          </div>
+
+          <form id="netflixForm" novalidate>
+            <input type="hidden" id="registroId" />
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="nombreEmpresa">Nombre de la empresa</label>
+                <input class="form-control" type="text" id="nombreEmpresa" name="nombreEmpresa" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="industria">Industria</label>
+                <input class="form-control" type="text" id="industria" name="industria" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="sede">Sede</label>
+                <input class="form-control" type="text" id="sede" name="sede" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="pais">País</label>
+                <input class="form-control" type="text" id="pais" name="pais" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="descripcion">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="sitioWeb">Sitio web</label>
+                <input class="form-control" type="url" id="sitioWeb" name="sitioWeb" placeholder="https://www.netflix.com" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="estado">Estado</label>
+                <select class="form-select" id="estado" name="estado" required>
+                  <option value="Activa">Activa</option>
+                  <option value="Inactiva">Inactiva</option>
+                  <option value="En expansión">En expansión</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="numeroEmpleados">Número de empleados</label>
+                <input class="form-control" type="text" inputmode="numeric" id="numeroEmpleados" name="numeroEmpleados" required />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="ingresosAnuales">Ingresos anuales</label>
+                <input class="form-control" type="text" inputmode="numeric" id="ingresosAnuales" name="ingresosAnuales" required />
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="fechaFundacion">Fecha de fundación</label>
+                <input class="form-control" type="date" id="fechaFundacion" name="fechaFundacion" required />
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary action-primary" id="submitBtn" type="submit">
+                Guardar registro
+              </button>
+              <button class="btn btn-outline-light" id="reloadBtn" type="button">
+                Recargar datos
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel list-panel" aria-labelledby="listTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Colección</p>
+              <h2 id="listTitle">Registros</h2>
+            </div>
+            <span class="api-pill">/api/netflix</span>
+          </div>
+
+          <div id="loadingState" class="loading-state" hidden>
+            Cargando registros...
+          </div>
+          <div id="recordsContainer" class="records-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
